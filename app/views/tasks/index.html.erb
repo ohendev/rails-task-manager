@@ -11,11 +11,12 @@
         <i class="far fa-square"></i>
         <% end %>
         <%= link_to task.title, task_path(task), class: "title" %> 
-        <%= link_to "Supprimer", 
-        task_path(task), 
+        <%= link_to task_path(task), 
         class: "btn btn-danger",
         method: :delete, 
-        data: { confirm: "Are you sure? " } %>
+        data: { confirm: "Are you sure? " } do %>
+          <i class="fas fa-trash"></i> Delete
+        <% end %>
         </li>
         <% end %>
       </ul>

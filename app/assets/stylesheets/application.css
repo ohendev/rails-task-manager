@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: gainsboro;
+}
+
 .header {
   border-radius: 8px;
   background-color: darkblue;
@@ -67,4 +71,11 @@
 .back:hover {
   background-color: yellowgreen;
   color: white;
+}
+
+.task-form {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 16px;
 }
