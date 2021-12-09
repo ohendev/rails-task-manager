@@ -1,13 +1,25 @@
-<h1>List of all the tasks</h1>
-<ul>
-  <% @tasks.each do |task| %>
-  <li>
-  <%= task.completed ? "[X]" : "[ ]" %>
-  <%= link_to task.title, task_path(task) %> - 
-  <%= link_to "Supprimer", 
-  task_path(task), 
-  method: :delete, 
-  data: { confirm: "Are you sure? " } %>
-  </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 border rounded my-3 p-3 bg-white shadow">
+      <h1 class="text-center header">Task Manager</h1>
+      <ul class="list">
+        <% @tasks.each do |task| %>
+        <li class="text-left alert-info my-1 p-1 ps-3 rounded d-flex justify-content-between align-items-center">
+        <% if task.completed == true %>
+        <i class="far fa-check-square"></i>
+        <% else %>
+        <i class="far fa-square"></i>
+        <% end %>
+        <%= link_to task.title, task_path(task), class: "title" %> 
+        <%= link_to "Supprimer", 
+        task_path(task), 
+        class: "btn btn-danger",
+        method: :delete, 
+        data: { confirm: "Are you sure? " } %>
+        </li>
+        <% end %>
+      </ul>
+      <%= link_to "add a new task", new_task_path, class: "add" %>
+    </div>
+  </div>
+</div>

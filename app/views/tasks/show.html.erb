@@ -1,2 +1,9 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1 class="text-center header my-2"><%= @task.title %></h1>
+      <p class="alert-info p-3 rounded "><%= @task.details %></p>
+      <%= link_to "back to index", tasks_path, class: "back" %>
+    </div>
+  </div>
+</div>
